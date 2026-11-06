@@ -16,6 +16,7 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 │   ├── Wis-sms-v1.0.10.apk
 │   └── Wis-sms.apk        # Latest release binary
 └── README.md              # Instructions for publishing new updates
+└── site/                  # Premium animated Next.js site (static export)
 ```
 
 ---
