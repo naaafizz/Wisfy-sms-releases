@@ -41,14 +41,14 @@ function Nav() {
     <div className="nav-shell">
       <nav className={`nav ${scrolled ? "scrolled" : ""}`} id="top">
         <Brand home />
-        <div className="nav-links">
+        <div className="nav-middle">
           <a href="#features">Features</a>
           <a href="#how">How it works</a>
           <a href="#releases">Releases</a>
-          <a className="btn btn-dark btn-sm" href={m.downloadUrl} download>
-            {DL_ICON} Download
-          </a>
         </div>
+        <a className="btn btn-dark btn-sm" href={m.downloadUrl} download>
+          {DL_ICON} Download
+        </a>
       </nav>
     </div>
   );
