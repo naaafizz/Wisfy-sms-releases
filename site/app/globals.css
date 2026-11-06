@@ -222,8 +222,9 @@ button { font-family: inherit; }
 .sms-row-top { display: flex; align-items: center; gap: 8px; }
 .sms-logo {
   width: 26px; height: 26px; border-radius: 9px; color: #fff; font-size: 10px; font-weight: 800;
-  display: grid; place-items: center;
+  display: grid; place-items: center; flex: 0 0 auto; overflow: hidden; background: #fff;
 }
+.sms-logo img { width: 100%; height: 100%; object-fit: contain; }
 .sms-sender { font-weight: 650; font-size: 13px; }
 .sms-time { margin-left: auto; font-size: 11px; color: var(--muted); }
 .sms-body { margin-top: 8px; font-size: 11.6px; line-height: 1.5; color: var(--ink-soft); }
@@ -304,23 +305,23 @@ button { font-family: inherit; }
 }
 
 /* steps */
-.steps-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; position: relative; }
+.steps-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 42px; position: relative; }
 .step {
-  position: relative; border-radius: 26px; background: var(--panel-2); border: 1px solid var(--line);
-  padding: 30px 28px 34px; transition: transform .35s ease, box-shadow .35s ease;
+  position: relative; min-width: 0; border-radius: 22px; background: var(--panel); border: 1px solid var(--line);
+  padding: 28px 26px 30px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.step:hover { transform: translateY(-5px); box-shadow: var(--shadow-panel); }
+.step:hover { transform: translateY(-3px); border-color: var(--line-strong); box-shadow: var(--shadow-panel); }
 .step-num {
-  display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 14px;
-  background: var(--ink); color: #f4f2e9; font-weight: 750; font-size: 16px;
-  box-shadow: 0 12px 26px -12px rgba(28,27,20,.6); margin-bottom: 20px;
+  display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 12px;
+  background: var(--green-soft); color: var(--green-ink); font-weight: 750; font-size: 14px;
+  margin-bottom: 18px;
 }
-.step h3 { margin: 0; font-size: 18px; }
-.step p { margin: 10px 0 0; font-size: 14.5px; color: var(--ink-soft); }
-.step code, .note code { background: rgba(28,27,20,.06); border-radius: 6px; padding: 2px 7px; font-size: .9em; font-family: ui-monospace, "Cascadia Code", monospace; }
+.step h3 { margin: 0; font-size: 17px; line-height: 1.35; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.step p { margin: 10px 0 0; font-size: 14px; line-height: 1.65; color: var(--ink-soft); overflow-wrap: anywhere; }
+.step code, .note code { background: var(--green-soft); color: var(--green-ink); border-radius: 5px; padding: 2px 5px; font-size: .88em; font-family: ui-monospace, "Cascadia Code", monospace; overflow-wrap: anywhere; }
 
 /* ============================================================ DARK SCHEMA BAND */
-.dark-band { margin-top: 110px; padding: 100px 0; background: var(--dark-bg); color: var(--dark-ink); border-radius: 44px; position: relative; overflow: hidden; }
+.dark-band { margin-top: 110px; padding: 84px clamp(24px, 5vw, 64px); background: var(--dark-bg); color: var(--dark-ink); border-radius: 44px; position: relative; overflow: hidden; }
 .dark-band::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
@@ -329,17 +330,19 @@ button { font-family: inherit; }
 }
 .dark-band .sec-kicker { color: #9fd07e; }
 .dark-band .sec-sub { color: var(--dark-muted); }
-.dark-grid { position: relative; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: start; }
+.dark-grid { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
+.dark-grid > * { min-width: 0; }
+.dark-band h2 { max-width: 12ch; font-size: clamp(32px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.02em; }
 
 .code-card {
-  border-radius: 22px; background: var(--dark-panel); border: 1px solid var(--dark-line);
-  overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,.6);
+  min-width: 0; border-radius: 22px; background: var(--dark-panel); border: 1px solid var(--dark-line);
+  overflow: hidden; box-shadow: 0 24px 54px -36px rgba(0,0,0,.65);
 }
 .code-head { display: flex; gap: 7px; padding: 15px 18px; border-bottom: 1px solid var(--dark-line); }
 .code-head i { width: 11px; height: 11px; border-radius: 50%; background: rgba(244,242,233,.18); }
 .code-card pre {
-  margin: 0; padding: 24px 26px 30px; overflow-x: auto;
-  font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 13px; line-height: 1.75;
+  max-width: 100%; margin: 0; padding: 22px 24px 26px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 12px; line-height: 1.7;
   color: #d8d6c8;
 }
 .c-dim { color: #6d6c5e; } .c-key { color: #9fd07e; } .c-str { color: #e8c07a; }
@@ -348,6 +351,7 @@ button { font-family: inherit; }
   display: flex; gap: 14px; margin-top: 26px; padding: 20px 22px; border-radius: 18px;
   background: rgba(244,242,233,.045); border: 1px solid var(--dark-line);
 }
+.dark-note > div, .dark-list .dl-item > div { min-width: 0; }
 .dark-note svg { width: 20px; height: 20px; flex: 0 0 auto; color: #e8c07a; margin-top: 2px; }
 .dark-note h4 { margin: 0; font-size: 15px; }
 .dark-note p { margin: 6px 0 0; font-size: 13.5px; color: var(--dark-muted); line-height: 1.6; }
@@ -359,8 +363,8 @@ button { font-family: inherit; }
   background: rgba(96,180,60,.16); color: #9fd07e;
 }
 .dark-list .dl-dot svg { width: 13px; height: 13px; }
-.dark-list b { font-size: 15.5px; display: block; }
-.dark-list span { font-size: 13.5px; color: var(--dark-muted); }
+.dark-list b { font-size: 15.5px; display: block; overflow-wrap: anywhere; }
+.dark-list span { font-size: 13.5px; line-height: 1.55; color: var(--dark-muted); overflow-wrap: anywhere; }
 
 /* ============================================================ RELEASES */
 .rel-rows { display: flex; flex-direction: column; gap: 12px; margin-top: 52px; }
@@ -519,7 +523,9 @@ button { font-family: inherit; }
   .rel-dl { width: 100%; justify-content: center; }
   .hero { padding-top: 140px; }
   .notes-card { padding: 28px 22px; }
-  .dark-band { border-radius: 30px; padding: 64px 22px; }
+  .dark-band { border-radius: 30px; padding: 56px 20px; }
+  .dark-grid { gap: 28px; }
+  .code-card pre { padding: 18px 16px 20px; font-size: 10.5px; }
   .final-card { border-radius: 30px; padding: 56px 22px; }
 }
 

@@ -170,7 +170,9 @@ function Hero({ m }: { m: Manifest }) {
 
               <div className="sms-card">
                 <div className="sms-row-top">
-                  <span className="sms-logo" style={{ background: "#e2136e" }}>bK</span>
+                  <span className="sms-logo">
+                    <img src={IMG("BKASH.png")} alt="" />
+                  </span>
                   <span className="sms-sender">bKash</span>
                   <span className="sms-time">18:30</span>
                 </div>
@@ -183,7 +185,9 @@ function Hero({ m }: { m: Manifest }) {
 
               <div className="sms-card">
                 <div className="sms-row-top">
-                  <span className="sms-logo" style={{ background: "#f6921e" }}>NG</span>
+                  <span className="sms-logo">
+                    <img src={IMG("nAGAD.png")} alt="" />
+                  </span>
                   <span className="sms-sender">Nagad</span>
                   <span className="sms-time">18:26</span>
                 </div>
@@ -408,7 +412,7 @@ X-Wisfy-Event-Id: evt_l9a4k1_8f93
     <span class="c-key">"server_verified"</span>: <span class="c-str">false</span>
   },
   <span class="c-key">"deduplication"</span>: { <span class="c-key">"idempotency_key"</span>: <span class="c-str">"bkash:9K8A7L6M2P"</span> }
-}`}</pre>
+}`.replace(/<\/?span[^>]*>/g, "")}</pre>
               </div>
               <div className="dark-list" style={{ marginTop: 22 }}>
                 {items.map((it, i) => (
