@@ -1,7 +1,7 @@
 {
-  "versionCode": 10,
-  "versionName": "v1.0.10",
-  "releaseNotes": "• Website QR code scanner integration\n• Scan pairing QR directly from client web admin dashboard\n• Auto-fills custom Webhook URL & temporary secret token\n• Support for any custom webhook URL & IP\n• Financial SMS whitelist (bKash, Nagad, Rocket, Upay, Cellfin, City Bank, DBBL, Islami Bank)",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/blob/main/releases/Wis-sms-v1.0.10.apk",
+  "versionCode": 11,
+  "versionName": "v1.0.11",
+  "releaseNotes": "• Seamless in-app update via direct repository artifact\n• Direct browser download button added\n• Locked official software update feed\n• Website QR pairing scanner & financial whitelist",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.11.apk",
   "isMandatory": false
 }
