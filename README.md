@@ -11,8 +11,9 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 
 ```
 ├── version.json           # Remote update manifest fetched by Wisfy SMS apps
-├── releases/              # (Optional local mirror of release APKs)
-│   └── Wis-sms-v1.3.0.apk
+├── releases/              # All versioned APK releases (kept permanently)
+│   ├── Wis-sms-v1.0.10.apk
+│   └── Wis-sms.apk        # Latest release binary
 └── README.md              # Instructions for publishing new updates
 ```
 
@@ -22,12 +23,11 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 
 ```json
 {
-  "versionCode": 3,
-  "versionName": "1.3.0",
-  "releaseNotes": "• Dynamic QR code pairing added\n• Temporary one-time secret key support\n• Custom URL support",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/releases/download/v1.3.0/Wis-sms.apk",
-  "isMandatory": false,
-  "apkSizeMb": 12.8
+  "versionCode": 10,
+  "versionName": "v1.0.10",
+  "releaseNotes": "• Website QR code scanner integration\n• Scan pairing QR directly from client web admin dashboard\n• Auto-fills custom Webhook URL & temporary secret token\n• Support for any custom webhook URL & IP\n• Financial SMS whitelist (bKash, Nagad, Rocket, Upay, Cellfin, City Bank, DBBL, Islami Bank)",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/releases/download/v1.0.10/Wis-sms-v1.0.10.apk",
+  "isMandatory": false
 }
 ```
 
