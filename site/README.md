@@ -13,8 +13,9 @@ npm run build   # static export → out/
 
 ## Deploy notes
 
-- The page re-fetches `../version.json` (and a few candidates) at runtime, so pushing a
-  new release to `version.json` on `main` updates the published figures without a rebuild.
+- The page reads `version.json` at startup, then checks it every 60 seconds and when a
+  background tab becomes active. Pushing a new release to `version.json` on `main`
+  updates the published version and download links without a rebuild.
 - If serving from a **sub-path** (e.g. GitHub Pages `repo.github.io/Wisfy-sms-releases/`),
   build with the base path:
   - add `basePath: "/Wisfy-sms-releases"` to `next.config.mjs`

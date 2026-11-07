@@ -12,6 +12,7 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 ```
 ├── version.json           # Remote update manifest fetched by Wisfy SMS apps
 ├── releases/              # All versioned APK releases (kept permanently)
+│   ├── Wis-sms-v1.0.14.apk
 │   ├── Wis-sms-v1.0.13.apk
 │   ├── Wis-sms-v1.0.11.apk
 │   ├── Wis-sms-v1.0.10.apk
@@ -25,10 +26,10 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 
 ```json
 {
-  "versionCode": 13,
-  "versionName": "v1.0.13",
-  "releaseNotes": "• Pipeline Throughput Advanced Analytics with latency & MFS volume breakdown\n• Clean single-line secret token input with instant clipboard paste\n• Top-bar profile name smart ellipsis to protect action icons\n• Hidden software update feed URL in Settings\n• Enhanced AI integration prompts and developer website documentation",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.13.apk",
+  "versionCode": 14,
+  "versionName": "v1.0.14",
+  "releaseNotes": "• Brand new animated cyber emblem logo with pulsing specular aura\n• Cash In / Payment confirmation chime & dual-pulse haptic feedback\n• Battery Optimization Whitelist protection helper for 24/7 background reliability\n• Today's total BDT volume & delivered SMS dashboard overview\n• SMS logs enhanced body/TrxID search & 1-tap 'Retry All Failed' banner\n• 1-Tap Webhook Live Ping test directly from Dashboard endpoint cards",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.14.apk",
   "isMandatory": false
 }
 ```

@@ -346,10 +346,37 @@ export function useLiveManifest(): Manifest {
   const [m, setM] = useState<Manifest>(MANIFEST);
   useEffect(() => {
     let alive = true;
-    fetchLiveManifest().then((live) => {
-      if (alive && live && live.versionCode >= MANIFEST.versionCode) setM(live);
-    });
-    return () => { alive = false; };
+    let timeout: ReturnType<typeof setTimeout>;
+    let checking = false;
+
+    const check = async () => {
+      if (checking) return;
+      checking = true;
+      try {
+        const live = await fetchLiveManifest();
+        if (alive && live) {
+          setM((current) => live.versionCode >= current.versionCode ? live : current);
+        }
+      } finally {
+        checking = false;
+        if (alive) timeout = setTimeout(check, 60_000);
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        clearTimeout(timeout);
+        void check();
+      }
+    };
+
+    void check();
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      alive = false;
+      clearTimeout(timeout);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
   }, []);
   return m;
 }

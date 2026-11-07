@@ -3,6 +3,8 @@
    app polls), so a fresh release pushed to main replaces these figures
    for every visitor without a rebuild. */
 
+import manifestJson from "../../version.json";
+
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const IMG = (name: string) => `${BASE}/images/${name}`;
@@ -15,15 +17,7 @@ export type Manifest = {
   isMandatory: boolean;
 };
 
-export const MANIFEST: Manifest = {
-  versionCode: 11,
-  versionName: "v1.0.11",
-  releaseNotes:
-    "• Seamless in-app update via direct repository artifact\n• Direct browser download button added\n• Locked official software update feed\n• Website QR pairing scanner & financial whitelist",
-  downloadUrl:
-    "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.11.apk",
-  isMandatory: false,
-};
+export const MANIFEST: Manifest = manifestJson;
 
 export type Release = {
   file: string;
@@ -87,10 +81,19 @@ export async function fetchLiveManifest(): Promise<Manifest | null> {
   const candidates = ["../version.json", "./version.json", "/version.json"];
   for (const path of candidates) {
     try {
-      const r = await fetch(path, { cache: "no-store" });
+      const separator = path.includes("?") ? "&" : "?";
+      const r = await fetch(`${path}${separator}_=${Date.now()}`, { cache: "no-store" });
       if (!r.ok) continue;
       const m = (await r.json()) as Manifest;
-      if (m && m.versionName && m.downloadUrl) return m;
+      if (
+        m &&
+        Number.isInteger(m.versionCode) &&
+        m.versionName &&
+        m.downloadUrl &&
+        typeof m.releaseNotes === "string"
+      ) {
+        return m;
+      }
     } catch {
       /* next candidate */
     }

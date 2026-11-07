@@ -34,9 +34,8 @@ function Brand({ home = false }: { home?: boolean }) {
 
 /* ---------------- NAV ---------------- */
 
-function Nav() {
+function Nav({ m }: { m: Manifest }) {
   const scrolled = useScrolled(40);
-  const m = useLiveManifest();
   return (
     <div className="nav-shell">
       <nav className={`nav ${scrolled ? "scrolled" : ""}`} id="top">
@@ -56,9 +55,8 @@ function Nav() {
 
 /* ---------------- STICKY BAR ---------------- */
 
-function StickyBar() {
+function StickyBar({ m }: { m: Manifest }) {
   const past = usePastHero(520);
-  const m = useLiveManifest();
   return (
     <div className="sticky-bar">
       <div className={`sticky-inner ${past ? "sticky-show" : "sticky-hide"}`}>
@@ -438,6 +436,20 @@ X-Wisfy-Event-Id: evt_l9a4k1_8f93
 /* ---------------- RELEASE NOTES + RELEASES ---------------- */
 
 function Releases({ m }: { m: Manifest }) {
+  const releases = [
+    {
+      file: m.downloadUrl.split("/").pop() || `Wis-sms-${m.versionName}.apk`,
+      label: m.versionName,
+      sub: "Latest release · current OTA channel",
+      size: "Latest",
+      url: m.downloadUrl,
+      latest: true,
+    },
+    ...RELEASES.filter((release) => !release.latest || release.url !== m.downloadUrl).map((release) =>
+      release.latest ? { ...release, latest: false, sub: "Archived release" } : release
+    ),
+  ];
+
   return (
     <section className="sec" id="releases">
       <div className="wrap">
@@ -472,7 +484,7 @@ function Releases({ m }: { m: Manifest }) {
 
         {/* all releases — newest first, rolling latest pinned at the bottom */}
         <div className="rel-rows">
-          {RELEASES.map((r) => (
+          {releases.map((r) => (
             <Reveal key={r.file} y={18}>
               <div className={`rel-row ${r.latest ? "latest-rel" : ""} ${r.rolling ? "rolling" : ""}`}>
                 <span className="rel-ico">{DL_ICON}</span>
@@ -583,8 +595,8 @@ export default function Page() {
   const m = useLiveManifest();
   return (
     <>
-      <Nav />
-      <StickyBar />
+      <Nav m={m} />
+      <StickyBar m={m} />
       <main>
         <Hero m={m} />
         <Providers />
