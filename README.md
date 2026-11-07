@@ -12,11 +12,11 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 ```
 ├── version.json           # Remote update manifest fetched by Wisfy SMS apps
 ├── releases/              # All versioned APK releases (kept permanently)
+│   ├── Wis-sms-v1.0.13.apk
 │   ├── Wis-sms-v1.0.11.apk
 │   ├── Wis-sms-v1.0.10.apk
 │   └── Wis-sms.apk        # Latest release binary
 └── README.md              # Instructions for publishing new updates
-└── site/                  # Premium animated Next.js site (static export)
 ```
 
 ---
@@ -25,10 +25,10 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 
 ```json
 {
-  "versionCode": 11,
-  "versionName": "v1.0.11",
-  "releaseNotes": "• Seamless in-app update via direct repository artifact\n• Direct browser download button added\n• Locked official software update feed\n• Website QR pairing scanner & financial whitelist",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.11.apk",
+  "versionCode": 13,
+  "versionName": "v1.0.13",
+  "releaseNotes": "• Pipeline Throughput Advanced Analytics with latency & MFS volume breakdown\n• Clean single-line secret token input with instant clipboard paste\n• Top-bar profile name smart ellipsis to protect action icons\n• Hidden software update feed URL in Settings\n• Enhanced AI integration prompts and developer website documentation",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.13.apk",
   "isMandatory": false
 }
 ```
@@ -52,23 +52,25 @@ Build the release APK using your production keystore.
 > ⚠️ **CRITICAL KEYSTORE WARNING:**  
 > Android strictly requires that **every update APK be signed with the exact SAME keystore and key alias** as the previous version. If the signing key changes, Android's package manager will abort the update with `INSTALL_FAILED_UPDATE_INCOMPATIBLE`.
 
-### Step 3: Create a GitHub Release in this Repo
-1. Go to: **https://github.com/naaafizz/Wisfy-sms-releases/releases/new**
-2. Tag version: `v1.3.0` (Create new tag on publish)
-3. Release title: `Wisfy SMS v1.3.0`
-4. Attach binary: Upload your newly generated `Wis-sms.apk`.
-5. Click **Publish release**.
-6. Right-click the uploaded `Wis-sms.apk` asset and copy its direct download URL:
-   `https://github.com/naaafizz/Wisfy-sms-releases/releases/download/v1.3.0/Wis-sms.apk`
+### Step 3: Publish APK to this Repo (Git Repository Artifacts)
+You can directly add the APK file to the `releases/` folder:
+1. Copy the new version APK into `releases/` (e.g., `releases/Wis-sms-v1.0.11.apk` and `releases/Wis-sms.apk`).
+2. **Never delete previous version APKs** (e.g., keep `Wis-sms-v1.0.10.apk`).
+3. Push to `main`.
+
+> 💡 **Preventing "There was a problem while parsing the package"**:
+> If you host the APK inside the `releases/` folder on GitHub (without publishing an official GitHub Release Tag), the direct download URL in `version.json` **MUST** use the raw artifact URL:
+> `https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.11.apk`
+> *(If you use `.../releases/download/...` when no release tag exists, GitHub returns a 404 HTML web page instead of the APK file, causing Android's package installer to report "There was a problem while parsing the package".)*
 
 ### Step 4: Update `version.json` in this Repo
 Edit `version.json` on the `main` branch with the new version code, notes, and the download link:
 ```json
 {
-  "versionCode": 3,
-  "versionName": "1.3.0",
-  "releaseNotes": "• Dynamic QR code pairing added\n• Temporary one-time secret key support\n• Custom URL support",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/releases/download/v1.3.0/Wis-sms.apk",
+  "versionCode": 11,
+  "versionName": "v1.0.11",
+  "releaseNotes": "• Seamless in-app update via direct repository artifact\n• Direct browser download button added\n• Locked official software update feed\n• Website QR pairing scanner & financial whitelist",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.11.apk",
   "isMandatory": false
 }
 ```

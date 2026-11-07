@@ -1,7 +1,7 @@
 {
-  "versionCode": 11,
-  "versionName": "v1.0.11",
-  "releaseNotes": "• Seamless in-app update via direct repository artifact\n• Direct browser download button added\n• Locked official software update feed\n• Website QR pairing scanner & financial whitelist",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.11.apk",
+  "versionCode": 13,
+  "versionName": "v1.0.13",
+  "releaseNotes": "• Pipeline Throughput Advanced Analytics with latency & MFS volume breakdown\n• Clean single-line secret token input with instant clipboard paste\n• Top-bar profile name smart ellipsis to protect action icons\n• Hidden software update feed URL in Settings\n• Enhanced AI integration prompts and developer website documentation",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.13.apk",
   "isMandatory": false
 }
