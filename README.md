@@ -12,6 +12,7 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 ```
 ├── version.json           # Remote update manifest fetched by Wisfy SMS apps
 ├── releases/              # All versioned APK releases (kept permanently)
+│   ├── Wis-sms-v1.0.15.apk
 │   ├── Wis-sms-v1.0.14.apk
 │   ├── Wis-sms-v1.0.13.apk
 │   ├── Wis-sms-v1.0.11.apk
@@ -26,10 +27,10 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 
 ```json
 {
-  "versionCode": 14,
-  "versionName": "v1.0.14",
-  "releaseNotes": "• Brand new animated cyber emblem logo with pulsing specular aura\n• Cash In / Payment confirmation chime & dual-pulse haptic feedback\n• Battery Optimization Whitelist protection helper for 24/7 background reliability\n• Today's total BDT volume & delivered SMS dashboard overview\n• SMS logs enhanced body/TrxID search & 1-tap 'Retry All Failed' banner\n• 1-Tap Webhook Live Ping test directly from Dashboard endpoint cards",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.14.apk",
+  "versionCode": 15,
+  "versionName": "v1.0.15",
+  "releaseNotes": "• Export dispatch logs to CSV / Excel sheet with standard share sheet integration\n• Payment Heads-Up Notification banner with amount & TrxID upon webhook dispatch\n• Daily Sales Target progress bar on Dashboard with customizable BDT goal & quick presets\n• SIM Slot Selective Filtering (All SIMs / SIM 1 Only / SIM 2 Only) to protect personal SIMs\n• 1-Tap Copy TrxID & Quick Share on SMS feed list items\n• Delete individual SMS feed items & Clear All history with confirmation safeguard\n• Webhook Server Down / Failure High-Priority Alert notification when endpoints return HTTP 5xx\n• Auto storage retention policy (auto-clean logs older than 7 Days / 30 Days / Never)\n• Enlarged premium top navigation bar logo",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.15.apk",
   "isMandatory": false
 }
 ```
