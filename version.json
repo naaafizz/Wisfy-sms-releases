@@ -1,7 +1,7 @@
 {
-  "versionCode": 16,
-  "versionName": "v1.0.16",
-  "releaseNotes": "• Offline SMS Queueing: holds incoming SMS safely in local Room database when disconnected from internet\n• Instant Auto-Sync on Network Reconnection: auto-dispatches queued messages in chronological FIFO order the moment WiFi or mobile network restores\n• Live Network & Offline Queue Status Banner on Dashboard & SMS Feed with live auto-sync progress indicator\n• Manual Flush Button in Settings and on banners for immediate queue delivery\n• Idempotency guarantee: preserved unique event IDs ensure webhooks never receive duplicate transactions upon delayed delivery\n• Complete battery-efficient network callback listener with background auto-flush support",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.16.apk",
+  "versionCode": 17,
+  "versionName": "v1.0.17",
+  "releaseNotes": "• Smart Bangla Voice Soundbox Announcement: speaks payment provider and amount in natural Bengali upon successful webhook delivery (with on/off toggle and audio test button)\n• Local WiFi Web Dashboard (Port 8080): live in-browser desktop dashboard over local WiFi for real-time transaction viewing, stats, and 1-click CSV download without cloud dependencies\n• Device Health & Battery Guard: real-time battery status with emergency alert notification if battery drops below 15% when unplugged\n• Webhook Speed & Latency Benchmark: live response time card on Dashboard displaying average ms, fastest, slowest, and real-time health rating\n• 24/7 Automated Forwarding System: maximum broadcast priority (2147483647), partial CPU WakeLock, FIFO queue persistence, and boot auto-revival ensure 100% automated SMS forwarding",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.17.apk",
   "isMandatory": false
 }
