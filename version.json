@@ -1,7 +1,7 @@
 {
-  "versionCode": 15,
-  "versionName": "v1.0.15",
-  "releaseNotes": "• Brand new animated cyber emblem logo with pulsing specular aura\n• Cash In / Payment confirmation chime & dual-pulse haptic feedback\n• Battery Optimization Whitelist protection helper for 24/7 background reliability\n• Today's total BDT volume & delivered SMS dashboard overview\n• SMS logs enhanced body/TrxID search & 1-tap 'Retry All Failed' banner\n• 1-Tap Webhook Live Ping test directly from Dashboard endpoint cards",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.15.apk",
+  "versionCode": 16,
+  "versionName": "v1.0.16",
+  "releaseNotes": "• Offline SMS Queueing: holds incoming SMS safely in local Room database when disconnected from internet\n• Instant Auto-Sync on Network Reconnection: auto-dispatches queued messages in chronological FIFO order the moment WiFi or mobile network restores\n• Live Network & Offline Queue Status Banner on Dashboard & SMS Feed with live auto-sync progress indicator\n• Manual Flush Button in Settings and on banners for immediate queue delivery\n• Idempotency guarantee: preserved unique event IDs ensure webhooks never receive duplicate transactions upon delayed delivery\n• Complete battery-efficient network callback listener with background auto-flush support",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.16.apk",
   "isMandatory": false
 }
