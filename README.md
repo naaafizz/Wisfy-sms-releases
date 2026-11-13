@@ -12,6 +12,10 @@ Public distribution and Over-The-Air (OTA) update repository for **Wisfy SMS Gat
 ```
 ├── version.json           # Remote update manifest fetched by Wisfy SMS apps
 ├── releases/              # All versioned APK releases (kept permanently)
+│   ├── Wis-sms-v1.0.22.apk
+│   ├── Wis-sms-v1.0.21.apk
+│   ├── Wis-sms-v1.0.20.apk
+│   ├── Wis-sms-v1.0.19.apk
 │   ├── Wis-sms-v1.0.18.apk
 │   ├── Wis-sms-v1.0.17.apk
 │   ├── Wis-sms-v1.0.16.apk

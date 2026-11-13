@@ -1,7 +1,7 @@
 {
-  "versionCode": 18,
-  "versionName": "v1.0.18",
-  "releaseNotes": "• 18-Year Girl Sweet Voice Model: added high-pitch, sweet & cheerful 18-year girl voice model alongside Professional Female and Deep Confident Male voice soundbox profiles\n• 3 Premium Chime Tone Styles: POS Terminal Chime, Crystal Cash Register, and Digital Modern Ping with live audio preview\n• Biometric & 4-Digit Security PIN App Lock: fingerprint scanner and secure numerical keypad protecting gateway settings and logs\n• Ultra-Premium Enterprise Web Dashboard: completely redesigned web interface with glassy specular header, real-time live filter tabs (All, bKash, Nagad, Delivered), and pulse status indicators\n• Cloudflare Zero-Config Remote Tunnel: one-command secure remote access instructions from anywhere in the world without router port forwarding",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.18.apk",
+  "versionCode": 22,
+  "versionName": "v1.0.22",
+  "releaseNotes": "• Fixed Bangla Voice Model Routing: Switching Announcement Language to Bangla now properly binds your selected Piper Female/Male voice model and distinct pitch/speed calibration instead of falling back to the legacy default bn-BD voice\n• Added Official Bangla Piper Model (bn_BD-google-medium): Multi-speaker 16-voice Bengali neural model added to Piper Voice Catalog, Gender Picker, and Starter Pack\n• Live Settings Voice Sync: Settings hub badge and Voice Test Studio now display the active bound voice profile and selected model in real time",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.22.apk",
   "isMandatory": false
 }
