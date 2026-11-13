@@ -1,7 +1,7 @@
 {
-  "versionCode": 22,
-  "versionName": "v1.0.22",
-  "releaseNotes": "• Fixed Bangla Voice Model Routing: Switching Announcement Language to Bangla now properly binds your selected Piper Female/Male voice model and distinct pitch/speed calibration instead of falling back to the legacy default bn-BD voice\n• Added Official Bangla Piper Model (bn_BD-google-medium): Multi-speaker 16-voice Bengali neural model added to Piper Voice Catalog, Gender Picker, and Starter Pack\n• Live Settings Voice Sync: Settings hub badge and Voice Test Studio now display the active bound voice profile and selected model in real time",
-  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.22.apk",
+  "versionCode": 23,
+  "versionName": "v1.0.23",
+  "releaseNotes": "• Anti-Clip DSP Voice Audio Fix: Strictly bounds TTS pitch [0.88–1.12] and speech rate [0.90–1.10], applies transient audio focus ducking with 0.88x digital headroom, and sequences payment chime before voice output to eliminate speaker crackling and distortion\n• Upgraded Control Center UI: Redesigned Settings Hub with gradient daemon telemetry card, featured Voices & Sound Playground card, and refined system module cards\n• Voices & Sound Studio Playground: Live 9-bar dynamic equalizer, clean anti-clip Pitch & Speed trim sliders (-6% to +6%), quick provider/amount presets, Chime + Voice sequence tester, and real-time DSP telemetry",
+  "downloadUrl": "https://github.com/naaafizz/Wisfy-sms-releases/raw/main/releases/Wis-sms-v1.0.23.apk",
   "isMandatory": false
 }
